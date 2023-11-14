@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario a rellenar</h1>
+    <label>Nombre: </label>  <input placeholder="Introduzca su nombre" type="text" id="nombre"> <label style="color: red;" id="nombremal" ></label> <br><br>
+    <label>Apellido: </label><input placeholder="Introduzca su apellido" type="text" id="apellido"><label style="color: red;" id="apellidomal" ></label> <br><br>
+    <label>Correo electronico: </label><input placeholder="Correo" type="text" id="correo"><label style="color: red;" id="correomal" ></label> <br><br>
+    <label>Dirección: </label><input placeholder="Introduzca su dirección" type="text" id="direccion"> <br><br>
+    <label>Ciudad: </label><input placeholder="Ciudad" type="text" id="ciudad"> <br><br>
+    <label>Telefono: </label><input placeholder="Introduzca su número" type="number" id="telefono"></label> <br><br>
+    <label>DNI: </label><input placeholder="Introduzca su DNI" type="text" id="dni"> <label style="color: red;" id="dnimal" ></label> <br><br>
+    <label>PIN: </label><input placeholder="Introduzca su pin" type="text" id="pin"> <label style="color: red;" id="pinmal" ></label> <br><br>
+    <label>PIN repetido: </label><input placeholder="Pin nuevamente" type="text" id="pinrepe"> <label style="color: red;" id="pinrepemal" ></label><br><br>
+
+    <button onclick="validar()">Enviar</button>
+
+    <p id="resultado"></p>
+    
+    <script src="Formulario.js" ></script>
+    
+</body>
+</html>

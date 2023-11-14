@@ -1,0 +1,27 @@
+body{
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 15%;
+    padding: 5%;
+  }
+#rojo {
+    background: red;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display:block;
+}
+
+#azul {
+    background: blue;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+#verde {
+    background: green;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}

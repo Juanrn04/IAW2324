@@ -1,15 +1,15 @@
 
 
 $(document).ready(function () {
-    var tamaño = 10;
+    var tamaño=20;
     $("#aumentar").click(function() { 
-        tamaño = tamaño + 10;
+        tamaño = tamaño + 1;
         $(".pares").css("font-size",tamaño);
         
     });
 
     $("#disminuir").click(function() { 
-        tamaño = tamaño - 10;
+        tamaño = tamaño - 1;
         $(".pares").css("font-size",tamaño);
     });
 });

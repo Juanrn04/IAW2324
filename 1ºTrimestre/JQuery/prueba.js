@@ -11,7 +11,7 @@ $(document).ready(function () {
         }
         else
         {
-            $("#" + entrada).hide();
+            $("#" + entrada.toLocaleLowerCase()).hide();
         }
 
         
@@ -26,7 +26,7 @@ $(document).ready(function () {
         }
         else
         {
-            $("#" + variable).show();
+            $("#" + variable.toLocaleLowerCase()).show();
         }
         
         

@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Ejercicio 5</title>
-<!-- Incluye jQuery-->
-<style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script><style>
     .contenedor{
         display:flex;
         align-items: center;
@@ -34,13 +33,29 @@
 <body>
     <div class="contenedor">
         <div class="caja roja"></div>
-        <div class="caja verde"></div>
+        <div class="caja verde" id="verde"></div>
     </div>
     <div class="contenedor">
-        <button id="btn-fadeIn">fadeIn</button><button id="btn-fadeOut">fadeOut</button><button id="btn-fadeToggle">fadeToggle</button>
+        <button id="fadeIn">fadeIn</button><button id="fadeOut">fadeOut</button><button id="fadeToggle">fadeToggle</button>
     </div>
     <script>
-        /* Rellena esta parte con el código jQuery */
+        $(document).ready(function () {
+            $("#fadeIn").click(function () { 
+                $(".caja").fadeIn(1000);
+            });
+
+            $("#fadeOut").click(function () { 
+                $(".caja").fadeOut();
+            });
+
+            $("#fadeToggle").click(function () { 
+                $(".caja").fadeToggle();
+            });
+
+            /* fadeToggle sirve para poder alternar fadeOut y fadeIn sin necesidad de tener dos botones ni dos funciones */
+
+           
+        });
     </script>
 </body>
 </html>

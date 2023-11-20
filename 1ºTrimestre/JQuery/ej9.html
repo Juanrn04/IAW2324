@@ -30,7 +30,11 @@
     </ul>
 
     <script>
-        /* Rellena aquí el código jQuery */
+        $(document).ready(function(){
+            $("li").each(function(){
+                $("a").append('<img width="50px" src="Imagenes">');
+            }); 
+        });
      </script>
 </body>
 </html>

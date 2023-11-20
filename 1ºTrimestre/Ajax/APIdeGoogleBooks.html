@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
+    <title>Libros</title>
 </head>
 <body>
-    
+    <input type="text" id="titulo" placeholder="Introduce un libro">
+    <button id="buscar">Buscar</button>
+    <div id="resultado"></div>
 </body>
+<script>
+    $(document).ready(function(){
+    $("#buscar").click(function(){
+        var titulo = $("#titulo").val();
+        var key = "AIzaSyBaaHWZ8qFOjM3frT9EEJx-RYz5B3xcAb8";
+        var link = "https://www.googleapis.com/books/v1/volumes?q=intitle:"+titulo+"&key="+key;
+        $.ajax({
+            url: link,
+            success: function(data){
+                var miString="";
+                for(var i=0;i<data.items.length;i++){
+                        miString+="<li>"+data.items[i].volumeInfo.title+"</li>";
+                }
+                $("#resultado").html(`<p style="font-weight:bold">Se ha encontrado ${data.items.length} libros</p><ol>${miString}</ol>`);
+            }
+        }).fail( function(){
+                $("#resultado").html(
+                    `<p>No se ha encontrado el libro</p>`);
+            })
+    })
+})
+</script>
 </html>

@@ -9,9 +9,9 @@
 <?php
 
 $imagenes = [
-    'ruta/imagen1.jpg',
-    'ruta/imagen2.jpg',
-    'ruta/imagen3.jpg',
+    'Imagenes/foto1.png',
+    'Imagenes/foto2.jpg',
+    'Imagenes/foto3.jpg',
 ];
 
 $imagenAleatoria = $imagenes[array_rand($imagenes)];

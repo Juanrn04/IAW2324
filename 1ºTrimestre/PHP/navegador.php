@@ -9,9 +9,10 @@
 <?php
 
 $navegador = $_SERVER['HTTP_USER_AGENT'];
+$ip = $_SERVER['REMOTE_ADDR'];
 
 echo "Tu navegador es: $navegador";
-
+echo "Tu IP es: $ip";
 
 ?>
     

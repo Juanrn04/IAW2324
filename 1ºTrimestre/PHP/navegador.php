@@ -8,9 +8,9 @@
 <body>
 <?php
 
-$userAgent = $_SERVER['HTTP_USER_AGENT'];
+$navegador = $_SERVER['HTTP_USER_AGENT'];
 
-echo "Tu navegador es: $userAgent";
+echo "Tu navegador es: $navegador";
 
 
 ?>

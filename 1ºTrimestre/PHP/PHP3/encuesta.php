@@ -12,13 +12,14 @@
     <input type="text" id="nombre" name="nombre" required><br><br>
 
     <label for="sexo">Sexo:</label> <br><br>
-    <input type="radio" id="mujer" name="sexo" value="mujer">
+    <input type="radio" id="mujer" name="sexo" value="Femenino">
     <label for="mujer">Mujer</label>
-    <input type="radio" id="hombre" name="sexo" value="hombre">
+    <input type="radio" id="hombre" name="sexo" value="Masculino">
     <label for="hombre">Hombre</label><br><br>
 
-    <label for="info">¿Quieres recibir información?</label>
-    <input type="checkbox" id="info" name="info"><br><br>
+    <label for="info">¿Quieres recibir información?</label> <br>
+    <input type="checkbox" name="info" value="si"> Si <br>
+    <input type="checkbox" name="info" value="no"> No <br>
 
     <label for="comunidad">Comunidad autónoma:</label>
     <select name="comunidad" id="comunidad">
@@ -37,14 +38,16 @@
 
 
     <?php
+
+     if(isset($_POST['submit'])) {
      $nombre = htmlspecialchars($_POST['nombre']);
      $sexo = htmlspecialchars($_POST['sexo']);
      $info = htmlspecialchars($_POST['info']);
      $comunidad = htmlspecialchars($_POST['comunidad']);
 
-     if(isset($_POST["submit"])) {
-     echo "<p> Se llama:" $nombre . ", es del sexo:" . $sexo .  $info . $comunidad
-
+     
+     echo "Su nombre es $nombre, es del sexo $sexo, $info le gustaria recibir información y es de $comunidad.";
+     
      }
 
 

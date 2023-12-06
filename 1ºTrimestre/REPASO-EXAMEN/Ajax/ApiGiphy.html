@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Sacaremos un gif de lo que busquemos </h1>
+    <input type="text" id="gif">
+    <button id="boton" >Buscar</button>
+    <p id="resultado" ></p>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#boton").click(function () { 
+            let texto = $("#gif").val();
+            let api = "AwbD2TXarZD6zAre19PMoLRaR6CQ1jFN"
+
+
+            $.ajax({
+                url: `https://api.giphy.com/v1/gifs/search?api_key=${api}&q=${texto}`,
+                success: function (data) {
+                $("#resultado").html(`
+                
+                <img src="${data.data[0].images.original.url}" >
+                `);
+                
+
+                },
+                error: function(){
+                $("#resultado").html("No se pudo obtener un gif con esa busqueda");
+                }
+            });
+
+                
+            });
+        });
+
+    </script>
+    
+</body>
+</html>

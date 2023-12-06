@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseguir una foto</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <H1>Buscador de fotos</H1>
+    <input type="text" id="foto"><br><br>
+    <button id="boton" >Buscar</button>
+    <p id="resultado" ></p>
+    <script>
+
+        $(document).ready(function () {
+            $("#boton").click(function () { 
+            let texto = $("#foto").val();
+            let api = "3b40a26ee3e266485a083cc0f792dde1";
+
+
+            $.ajax({
+                url: `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${api}&text=${texto}&format=json&nojsoncallback=1`,
+                success: function (data) {
+                $("#resultado").html(`
+                <img src="https://live.staticflickr.com/${data.photos.photo[1].server}/${data.photos.photo[1].id}_${data.photos.photo[1].secret}.jpg"  >
+                `);
+                },
+
+                fail: function () { 
+                    $("#resultado").html("No hay coincidencias con su busqueda");
+                 },
+
+                error: function(){
+                    $("#resultado").html("Error encontrar su resultado, porfavor esriba otra imagen a buscar");
+                }
+            });
+                
+            });
+        });
+
+
+    </script>
+    
+
+
+
+</body>
+</html>

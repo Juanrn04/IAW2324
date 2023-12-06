@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El tiempo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Averigua el tiempo en tu ciudad</h1>   
+    <input type="text" name="" id="ciudad">
+    <button id="boton" >Ver temperatura</button> 
+    <p id="resultado" ></p>
+    <script>
+
+        $(document).ready(function () {
+            $("#boton").click(function () { 
+            var ciudad = $("#ciudad").val();
+            var api = "b716811c5fc4c6c2f497d556382c1f5f"; 
+            
+
+            $.ajax({
+                url: `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${api}&units=metric`,
+                success: function (data) {
+                $("#resultado").html(
+                    `<h2>${data.name}, ${data.sys.country}</h2>
+                    <p>Temperatura: ${data.main.temp}ºC</p>
+                    <p>Presión: ${data.main.pressure}%</p>
+                    <p>Descripción: ${data.weather[0].description}</p>`
+                );
+                },
+                error: function(){
+                    $("#resultado").html("<p>No se pudo obtener información de dicha ciudad, pruebe con otra</p>");
+                }
+            });
+        });
+    });
+
+    </script>
+    
+    
+</body>
+</html>

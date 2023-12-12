@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+</head>
+<body>
+    <h1>Formulario de contacto</h1>
+    <form method="post">
+    <label>Asunto*: </label>  <input placeholder="Introduzca un asunto" type="text" id="asunto"> <label style="color: red;" id="asuntomal" ></label> <br><br>
+
+    <label>DNI: </label><input placeholder="Introduzca su DNI" type="text" id="dni"> <label style="color: red;" id="dnimal" ></label> <br><br>
+
+    <label>Nombre: </label>  <input placeholder="Introduzca su nombre" type="text" id="nombre"> <label style="color: red;" id="nombremal" ></label> <br><br>
+
+    <label>Primer apellido: </label><input placeholder="Introduzca su apellido" type="text" id="apellido1"><label style="color: red;" id="apellidomal1" ></label> <br><br>
+
+    <label>Segundo apellido: </label><input placeholder="Introduzca su apellido" type="text" id="apellido2"><label style="color: red;" id="apellidomal2" ></label> <br><br>
+
+    <label>Fecha de nacimiento: </label>  <input placeholder="Introduzca su fecha" type="date" id="fechanac"> <label style="color: red;" id="fechanacmal" ></label> <br><br>
+
+    <label>Telefono: </label><input placeholder="Introduzca su número" type="number" id="telefono"></label><label style="color: red;" id="telefonomal" ></label> <br><br>
+
+    <label>Correo electronico: </label><input placeholder="Correo" type="text" id="correo"><label style="color: red;" id="correomal" ></label> <br><br>
+
+    <label>Domicilio: </label><input placeholder="Introduzca su domicilio" type="text" id="domicilio"> <label style="color: red;" id="domiciliomal" ></label> <br><br>
+
+    <label>Código postal: </label><input placeholder="Introduzca su codigo postal" type="text" id="cp"> <label style="color: red;" id="cpmal" ></label> <br><br>
+
+    <label>Municipio: </label>
+    <select name="Municipio" id="municipio">
+        <option value='41001'
+        >Aguadulce</option>
+        <option value='41002'
+        >Alanís</option>
+        <option value='41003'
+        >Albaida del Aljarafe</option>
+        <option value='41004'
+        >Alcalá de Guadaíra</option>
+        <option value='41005'
+        >Alcalá del Río</option>
+        <option value='41006'
+        >Alcolea del Río</option>
+        <option value='41008'
+        >Algámitas</option>
+        <option value='41009'
+        >Almadén de la Plata</option>
+        <option value='41010'
+        >Almensilla</option>
+        <option value='41011'
+        >Arahal</option>
+        <option value='41012'
+        >Aznalcázar</option>
+        <option value='41013'
+        >Aznalcóllar</option>
+        <option value='41014'
+        >Badolatosa</option>
+        <option value='41015'
+        >Benacazón</option>
+        <option value='41016'
+        >Bollullos de la Mitación</option>
+        <option value='41017'
+        >Bormujos</option>
+        <option value='41018'
+        >Brenes</option>
+        <option value='41019'
+        >Burguillos</option>
+        <option value='41021'
+        >Camas</option>
+        <option value='41023'
+        >Cantillana</option>
+        <option value='41901'
+        >Cañada Rosal</option>
+        <option value='41024'
+        >Carmona</option>
+        <option value='41025'
+        >Carrión de los Céspedes</option>
+        <option value='41026'
+        >Casariche</option>
+        <option value='41027'
+        >Castilblanco de los Arroyos</option>
+        <option value='41028'
+        >Castilleja de Guzmán</option>
+        <option value='41029'
+        >Castilleja de la Cuesta</option>
+        <option value='41030'
+        >Castilleja del Campo</option>
+        <option value='41032'
+        >Cazalla de la Sierra</option>
+        <option value='41033'
+        >Constantina</option>
+        <option value='41034'
+        >Coria del Río</option>
+        <option value='41035'
+        >Coripe</option>
+        <option value='41038'
+        >Dos Hermanas</option>
+        <option value='41039'
+        >Écija</option>
+        <option value='41031'
+        >El Castillo de las Guardas</option>
+        <option value='41036'
+        >El Coronil</option>
+        <option value='41903'
+        >El Cuervo</option>
+        <option value='41043'
+        >El Garrobo</option>
+        <option value='41057'
+        >El Madroño</option>
+        <option value='41904'
+        >El Palmar de Troya</option>
+        <option value='41073'
+        >El Pedroso</option>
+        <option value='41080'
+        >El Real de la Jara</option>
+        <option value='41083'
+        >El Ronquillo</option>
+        <option value='41084'
+        >El Rubio</option>
+        <option value='41090'
+        >El Saucejo</option>
+        <option value='41102'
+        >El Viso del Alcor</option>
+        <option value='41040'
+        >Espartinas</option>
+        <option value='41041'
+        >Estepa</option>
+        <option value='41042'
+        >Fuentes de Andalucía</option>
+        <option value='41044'
+        >Gelves</option>
+        <option value='41045'
+        >Gerena</option>
+        <option value='41046'
+        >Gilena</option>
+        <option value='41047'
+        >Gines</option>
+        <option value='41048'
+        >Guadalcanal</option>
+        <option value='41049'
+        >Guillena</option>
+        <option value='41050'
+        >Herrera</option>
+        <option value='41051'
+        >Huévar del Aljarafe</option>
+        <option value='41902'
+        >Isla Mayor</option>
+        <option value='41007'
+        >La Algaba</option>
+        <option value='41022'
+        >La Campana</option>
+        <option value='41056'
+        >La Luisiana</option>
+        <option value='41077'
+        >La Puebla de Cazalla</option>
+        <option value='41078'
+        >La Puebla de los Infantes</option>
+        <option value='41079'
+        >La Puebla del Río</option>
+        <option value='41081'
+        >La Rinconada</option>
+        <option value='41082'
+        >La Roda de Andalucía</option>
+        <option value='41052'
+        >Lantejuela</option>
+        <option value='41020'
+        >Las Cabezas de San Juan</option>
+        <option value='41066'
+        >Las Navas de la Concepción</option>
+        <option value='41053'
+        >Lebrija</option>
+        <option value='41054'
+        >Lora de Estepa</option>
+        <option value='41055'
+        >Lora del Río</option>
+        <option value='41037'
+        >Los Corrales</option>
+        <option value='41063'
+        >Los Molares</option>
+        <option value='41069'
+        >Los Palacios y Villafranca</option>
+        <option value='41058'
+        >Mairena del Alcor</option>
+        <option value='41059'
+        >Mairena del Aljarafe</option>
+        <option value='41060'
+        >Marchena</option>
+        <option value='41061'
+        >Marinaleda</option>
+        <option value='41062'
+        >Martín de la Jara</option>
+        <option value='41064'
+        >Montellano</option>
+        <option value='41065'
+        >Morón de la Frontera</option>
+        <option value='41067'
+        >Olivares</option>
+        <option value='41068'
+        >Osuna</option>
+        <option value='41070'
+        >Palomares del Río</option>
+        <option value='41071'
+        >Paradas</option>
+        <option value='41072'
+        >Pedrera</option>
+        <option value='41074'
+        >Peñaflor</option>
+        <option value='41075'
+        >Pilas</option>
+        <option value='41076'
+        >Pruna</option>
+        <option value='41085'
+        >Salteras</option>
+        <option value='41086'
+        >San Juan de Aznalfarache</option>
+        <option value='41088'
+        >San Nicolás del Puerto</option>
+        <option value='41087'
+        >Sanlúcar la Mayor</option>
+        <option value='41089'
+        >Santiponce</option>
+        <option value='41091'
+        >Sevilla</option>
+        <option value='41092'
+        >Tocina-los Rosales</option>
+        <option value='41093'
+        >Tomares</option>
+        <option value='41094'
+        >Umbrete</option>
+        <option value='41095'
+        >Utrera</option>
+        <option value='41096'
+        >Valencina de la Concepción</option>
+        <option value='41097'
+        >Villamanrique de la Condesa</option>
+        <option value='41100'
+        >Villanueva de San Juan</option>
+        <option value='41098'
+        >Villanueva del Ariscal</option>
+        <option value='41099'
+        >Villanueva del Río y Minas</option>
+        <option value='41101'
+        >Villaverde del Río</option>
+    </select>  <label style="color: red;" id="municipiomal" ></label> <br><br>
+
+    <label>Oficina: </label><input  list="oficinas" placeholder="Introduzca su oficina" type="text" id="oficina">
+
+    <datalist id="oficinas">
+        <option value="Oficina 1">
+        <option value="Oficina 2">
+        <option value="Oficina 3">
+        <option value="Oficina 4">
+    </datalist> 
+
+    <label style="color: red;" id="oficinamal" ></label> <br><br>
+
+    <label>Información requerida: </label>
+    <textarea name="" id="info" cols="30" rows="10"></textarea> <label style="color: red;" id="infomal" ></label> <br><br>
+
+    <label>Fichero Anexo I (Maximo 2MB): </label><input  type="file" id="anexo1"> <label style="color: red;" id="anexo1mal" ></label> <br><br>
+
+    <label>Fichero Anexo II (Maximo 2MB): </label><input  type="file" id="anexo2"><label style="color: red;" id="anexo2mal" ></label> <br><br>
+
+    <label>He leido y acepto la politica de datos y normas de uso </label><input  type="checkbox" id="politica"><label style="color: red;" id="politicamal" ></label> <br><br>
+
+
+
+
+</form>
+
+
+    <button onclick="validar()">Enviar</button>
+
+    <p id="resultado"></p>
+    
+    <script src="ej1.js" ></script>
+    
+</body>
+</html>

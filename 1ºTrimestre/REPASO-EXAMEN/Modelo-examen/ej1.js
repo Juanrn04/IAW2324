@@ -194,6 +194,10 @@ function validar()
         if(!politica){
             document.getElementById("politicamal").innerHTML="Debe rellenar este campo";
         }
+        else
+        {
+            document.getElementById("politicamal").innerHTML="";
+        }
 
 
         if(anexo1==""){

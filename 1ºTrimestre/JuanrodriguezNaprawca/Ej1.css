@@ -1,0 +1,17 @@
+.btn-image {
+    background-image: url('Imagenes/Logo_Papelera.png');
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+    float: right;
+}
+.tweet {
+    width:400px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    position:sticky;
+    
+    
+
+    
+}

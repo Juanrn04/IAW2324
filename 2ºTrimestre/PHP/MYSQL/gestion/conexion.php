@@ -1,5 +1,5 @@
 <?php
-$servername = "ftpupload.net";
+$servername = "sql307.thsite.top";
 $username = "thsi_35748575";
 $password = "uS9rA5MT";
 

@@ -28,7 +28,7 @@ $dbname = "thsi_35748575_bdprueba";
             //$query = "SELECT * FROM usuarios WHERE username='".$_POST['usuario']."' AND password='".$_POST['contrasena']."'";
             $query = "SELECT * FROM usuarios WHERE username='".mysqli_real_escape_string($enlace,$usuario)."' AND password='".mysqli_real_escape_string($enlace,$contrasena)."'";
             $result = mysqli_query($enlace,$query);
-            if (mysqli_num_rows($result)==1)
+            if (mysqli_num_rows($result)>0)
             {
                 echo "<p>Bienvenido " . $usuario . "</p>";
             }
@@ -38,7 +38,7 @@ $dbname = "thsi_35748575_bdprueba";
         }
         else{
             echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-            echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+            echo "error de depuración: " . mysqli_connect_errno() . PHP_EOL;
             echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
         }       
 }

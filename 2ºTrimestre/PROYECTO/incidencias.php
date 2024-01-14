@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Bienvenido</title>
-</head>
-<body>
-    <h2>Bienvenido, <?php echo $_SESSION['usuario']; ?>!</h2>
-</body>
-</html>
 
+<?php include "header.php"; ?>
+
+    <h2>Bienvenido, <?php echo $_SESSION['usuario']; ?>!</h2>
 
 <?php
 
@@ -36,7 +29,7 @@ $result = $conn->query($sql);
 
 //Estrutura de la tabla
 if ($result->num_rows > 0) {
-echo "<table border='1'>
+echo "<table border='2'>
 <tr>
 <th>Id</th>
 <th>Planta</th>
@@ -58,6 +51,9 @@ while($row = $result->fetch_assoc()) {
     echo "<td>" . $row['revision'] . "</td>";
     echo "<td>" . $row['resolucion'] . "</td>";
     echo "<td>" . $row['comentario'] . "</td>";
+    echo " <td class='text-center'> <a href='view.php?incidencia_id={$id}' class='btn btn-primary'> <i class='bi bi-eye'></i> Ver</a> </td>";
+    echo " <td class='text-center' > <a href='update.php?editar&incidencia_id={$id}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>";
+    echo " <td class='text-center'>  <a href='delete.php?eliminar={$id}' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>";
     echo "</tr>";
 }
 echo "</table>";
@@ -65,6 +61,8 @@ echo "</table>";
 } else {
   echo "0 results";
 }
+
+include "footer.php";
 
 $conn->close();
 ?>

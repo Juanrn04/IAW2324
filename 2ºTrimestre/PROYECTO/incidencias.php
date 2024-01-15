@@ -1,6 +1,12 @@
 <!-- Header -->
 <?php include "header.php"?>
 
+
+<!-- Navbar -->
+
+<!-- Navbar -->
+
+
   <div class="container">
     <h1 class="text-center" >Gestión de incidencias (CRUD)</h1>
       <a href="create.php" class='btn btn-outline-dark mb-2'> <i class="bi bi-person-plus"></i> Añadir incidencia</a>

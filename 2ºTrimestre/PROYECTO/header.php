@@ -35,6 +35,7 @@ include 'conexion.php';
         loading="lazy"
         style="margin-top: -1px; width: 69px; height: auto;"
       />
+
     </a>
 
     <!-- Toggle button -->
@@ -70,7 +71,7 @@ include 'conexion.php';
         <img src="https://cdn-icons-png.flaticon.com/512/260/260507.png" alt="" style="width: 25px; height: auto;">
 
         <?php
-            echo $usuario;
+            echo $_SESSION['usuario'];
         ?>
 
       </div>

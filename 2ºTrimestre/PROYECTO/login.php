@@ -57,7 +57,7 @@
                     echo "<script> document.getElementById('mensaje').innerHTML='Inicio de sesión correcto';
                     document.getElementById('mensaje').className='acierto'</script>";
 
-                    sleep(0.5);
+                    sleep(1.5);
                     $usuario=$_SESSION['usuario'];
                     header("Location: incidencias.php");
         

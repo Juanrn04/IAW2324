@@ -45,7 +45,7 @@
   </div>
 
   <div class="container text-center mt-5">
-    <a href="http://juan.thsite.top/crud/proyecto/incidencias.php" class="btn btn-warning mt-5"> Volver </a>
+    <a href="incidencias.php" class="btn btn-warning mt-5"> Volver </a>
   <div>
 
 <?php include "footer.php" ?>

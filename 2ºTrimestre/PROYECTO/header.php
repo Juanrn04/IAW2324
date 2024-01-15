@@ -1,4 +1,5 @@
 <?php 
+$showMessages= false;
 include 'conexion.php';
 
 

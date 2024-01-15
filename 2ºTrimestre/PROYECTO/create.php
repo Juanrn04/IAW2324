@@ -39,15 +39,15 @@
       </div>
       <div class="form-group">
         <label for="fecha_alta" class="form-label">Fecha Alta</label>
-        <input type="date" name="fecha_alta"  class="form-control">
+        <input type="date" name="alta"  class="form-control">
       </div>
       <div class="form-group">
         <label for="fecha_rev" class="form-label">Fecha Revisión</label>
-        <input type="date" name="fecha_rev"  class="form-control">
+        <input type="date" name="revision"  class="form-control">
       </div>
       <div class="form-group">
         <label for="fecha_sol" class="form-label">Fecha Solución</label>
-        <input type="date" name="fecha_sol"  class="form-control">
+        <input type="date" name="resolucion"  class="form-control">
       </div>
       <div class="form-group">
         <label for="comentario" class="form-label">Comentario</label>
@@ -59,6 +59,6 @@
     </form> 
   </div>
   <div class="container text-center mt-5">
-    <a href="home.php" class="btn btn-warning mt-5"> Volver </a>
+    <a href="incidencias.php" class="btn btn-warning mt-5"> Volver </a>
   <div>
 <?php include "footer.php" ?>

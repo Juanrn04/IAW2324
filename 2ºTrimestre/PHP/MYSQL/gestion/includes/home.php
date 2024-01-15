@@ -1,5 +1,5 @@
 <!-- Header -->
-<?php include "../header.php"?>
+<?php include "header.php"?>
 
   <div class="container">
     <h1 class="text-center" >Gestión de incidencias (CRUD)</h1>
@@ -30,9 +30,9 @@
               $planta = $row['planta'];        
               $aula = $row['aula'];         
               $descripcion = $row['descripcion'];        
-              $fecha_alta = $row['fecha_alta'];        
-              $fecha_rev = $row['fecha_rev'];        
-              $fecha_sol = $row['fecha_sol'];        
+              $fecha_alta = $row['alta'];        
+              $fecha_rev = $row['revision'];        
+              $fecha_sol = $row['resolucion'];        
               $comentario = $row['comentario']; 
               echo "<tr >";
               echo " <th scope='row' >{$id}</th>";

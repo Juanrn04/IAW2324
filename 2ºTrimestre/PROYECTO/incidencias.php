@@ -1,68 +1,63 @@
+<!-- Header -->
+<?php include "header.php"?>
 
-<?php include "header.php"; ?>
+  <div class="container">
+    <h1 class="text-center" >Gestión de incidencias (CRUD)</h1>
+      <a href="create.php" class='btn btn-outline-dark mb-2'> <i class="bi bi-person-plus"></i> Añadir incidencia</a>
+        <table class="table table-striped table-bordered table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th  scope="col">ID</th>
+              <th  scope="col">Planta</th>
+              <th  scope="col">Aula</th>
+              <th  scope="col">Descripción</th>
+              <th  scope="col">Fecha alta</th>
+              <th  scope="col">Fecha revisión</th>
+              <th  scope="col">Fecha solución</th>
+              <th  scope="col">Comentario</th>
+              <th  scope="col" colspan="3" class="text-center">Operaciones</th>
+            </tr>  
+          </thead>
+            <tbody>
+              <tr>
+ 
+          <?php
+            $query="SELECT * FROM incidencias";               
+            $vista_incidencias= $conn->query($query);
 
-    <h2>Bienvenido, <?php echo $_SESSION['usuario']; ?>!</h2>
+            while($row = $vista_incidencias->fetch()){
+              $id = $row['id'];                
+              $planta = $row['planta'];        
+              $aula = $row['aula'];         
+              $descripcion = $row['descripcion'];        
+              $fecha_alta = $row['alta'];        
+              $fecha_rev = $row['revision'];        
+              $fecha_sol = $row['resolucion'];        
+              $comentario = $row['comentario']; 
+              echo "<tr >";
+              echo " <th scope='row' >{$id}</th>";
+              echo " <td > {$planta}</td>";
+              echo " <td > {$aula}</td>";
+              echo " <td >{$descripcion} </td>";
+              echo " <td >{$fecha_alta} </td>";
+              echo " <td >{$fecha_rev} </td>";
+              echo " <td >{$fecha_sol} </td>";
+              echo " <td >{$comentario} </td>";
+              echo " <td class='text-center'> <a href='view.php?incidencias_id={$id}' class='btn btn-primary'> <i class='bi bi-eye'></i> Ver</a> </td>";
+              echo " <td class='text-center' > <a href='update.php?editar&incidencias_id={$id}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>";
+              echo " <td class='text-center'>  <a href='delete.php?eliminar={$id}' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>";
+              echo " </tr> ";
+                  }  
 
-<?php
+                   
 
-/*Conexion a la base de datos de PEPE
-include "conexion.php";
-header("Content-type:text/html;charset=utf-8"); */
-
-//Conexion a la base de datos de JUAN
-$servername = "sql307.thsite.top";
-$username = "thsi_35748575";
-$password = "uS9rA5MT";
-$dbname = "thsi_35748575_bdprueba";
-  
-// creamos la conexion
-$conn = new mysqli($servername, $username, $password, $dbname);
-$conn->set_charset("utf8mb4");
-// Confirmamos que la conexión se ha realizado de forma correcta
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-//Operación a realizar
-$sql = "SELECT * FROM incidencias";
-$result = $conn->query($sql);
-
-//Estrutura de la tabla
-if ($result->num_rows > 0) {
-echo "<table border='2'>
-<tr>
-<th>Id</th>
-<th>Planta</th>
-<th>Aula</th>
-<th>Descripcion</th>
-<th>Alta</th>
-<th>Revision</th>
-<th>Resolucion</th>
-<th>Comentario</th>
-</tr>";
-
-while($row = $result->fetch_assoc()) {
-    echo "<tr>";
-    echo "<td>" . $row['id'] . "</td>";
-    echo "<td>" . $row['planta'] . "</td>";
-    echo "<td>" . $row['aula'] . "</td>";
-    echo "<td>" . $row['descripcion'] . "</td>";
-    echo "<td>" . $row['alta'] . "</td>";
-    echo "<td>" . $row['revision'] . "</td>";
-    echo "<td>" . $row['resolucion'] . "</td>";
-    echo "<td>" . $row['comentario'] . "</td>";
-    echo " <td class='text-center'> <a href='view.php?incidencia_id={$id}' class='btn btn-primary'> <i class='bi bi-eye'></i> Ver</a> </td>";
-    echo " <td class='text-center' > <a href='update.php?editar&incidencia_id={$id}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>";
-    echo " <td class='text-center'>  <a href='delete.php?eliminar={$id}' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>";
-    echo "</tr>";
-}
-echo "</table>";
-
-} else {
-  echo "0 results";
-}
-
-include "footer.php";
-
-$conn->close();
-?>
+$conn->close()
+                ?>
+              </tr>  
+            </tbody>
+        </table>
+  </div>
+<div class="container text-center mt-5">
+      <a href="../index.php" class="btn btn-warning mt-5"> Volver </a>
+    <div>
+<?php include "footer.php";?>

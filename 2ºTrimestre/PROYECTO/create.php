@@ -1,4 +1,4 @@
-<?php  include "../header.php" ?>
+<?php  include "header.php" ?>
 <?php 
   if(isset($_POST['crear'])) 
     {
@@ -6,11 +6,11 @@
         $aula = htmlspecialchars($_POST['aula']);
         $descripcion = htmlspecialchars($_POST['descripcion']);
         $comentario = htmlspecialchars($_POST['comentario']);
-        $fecha_alta = htmlspecialchars($_POST['fecha_alta']);
-        $fecha_rev = htmlspecialchars($_POST['fecha_rev']);
-        $fecha_sol = htmlspecialchars($_POST['fecha_sol']);
+        $fecha_alta = htmlspecialchars($_POST['alta']);
+        $fecha_rev = htmlspecialchars($_POST['revision']);
+        $fecha_sol = htmlspecialchars($_POST['resolucion']);
       
-        $query= "INSERT INTO incidencias(planta, aula, descripcion, fecha_alta, fecha_rev, fecha_sol, comentario) VALUES('{$planta}','{$aula}','{$descripcion}','{$fecha_alta}','{$fecha_rev}','{$fecha_sol}','{$comentario}')";
+        $query= "INSERT INTO incidencias(planta, aula, descripcion, alta, revision, resolucion, comentario) VALUES('{$planta}','{$aula}','{$descripcion}','{$fecha_alta}','{$fecha_rev}','{$fecha_sol}','{$comentario}')";
         $resultado = $conn->query($query);
     
           if (!$resultado) {
@@ -61,4 +61,4 @@
   <div class="container text-center mt-5">
     <a href="home.php" class="btn btn-warning mt-5"> Volver </a>
   <div>
-<?php include "../footer.php" ?>
+<?php include "footer.php" ?>

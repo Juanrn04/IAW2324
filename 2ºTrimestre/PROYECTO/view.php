@@ -19,12 +19,12 @@
           <tr>
                
             <?php
-              if (isset($_GET['id'])) {
-                  $incidenciaid = htmlspecialchars($_GET['id']); 
-                  $query="SELECT * FROM incidencias WHERE id = {$incidenciaid} LIMIT 1";  
-                  $vista_incidencias= mysqli_query($conn,$query);            
+              if (isset($_GET['incidencias_id'])) {
+                  $incidenciaid = htmlspecialchars($_GET['incidencias_id']); 
+                  $query="SELECT * FROM incidencias WHERE id = $incidenciaid LIMIT 1";  
+                  $vista_incidencias= $conn->query($query);            
 
-                  while($row = mysqli_fetch_assoc($vista_incidencias))
+                  while($row = $vista_incidencias->fetch())
                   {
                         echo "<tr>";
                         echo "<td>" . $row['id'] . "</td>";
@@ -45,7 +45,7 @@
   </div>
 
   <div class="container text-center mt-5">
-    <a href="incidencias.php" class="btn btn-warning mt-5"> Volver </a>
+    <a href="http://juan.thsite.top/crud/proyecto/incidencias.php" class="btn btn-warning mt-5"> Volver </a>
   <div>
 
 <?php include "footer.php" ?>

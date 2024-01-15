@@ -1,16 +1,7 @@
 <?php 
-$servername = "sql307.thsite.top";
-$username = "thsi_35748575";
-$password = "uS9rA5MT";
-$dbname = "thsi_35748575_bdprueba";
-  
-// creamos la conexion
-$conn = new mysqli($servername, $username, $password, $dbname);
-$conn->set_charset("utf8mb4");
-// Confirmamos que la conexión se ha realizado de forma correcta
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-};
+include 'conexion.php';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

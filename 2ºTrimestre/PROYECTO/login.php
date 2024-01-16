@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN|PROYECTO</title>
+    <title>LOGIN | PROYECTO</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
@@ -57,8 +57,9 @@
                     echo "<script> document.getElementById('mensaje').innerHTML='Inicio de sesión correcto';
                     document.getElementById('mensaje').className='acierto'</script>";
 
+                    session_start();
                     sleep(1.5);
-                    $usuario=$_SESSION['usuario'];
+                    $_SESSION['usuario']=$usuario;
                     header("Location: incidencias.php");
         
                 } else {

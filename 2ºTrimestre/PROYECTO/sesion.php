@@ -1,11 +1,11 @@
 <?php
     session_set_cookie_params(120);
     session_start();
-    if($_SESSION['viene']=="si"){
+    if(isset($_SESSION['usuario'])){
         $usuario=$_SESSION['usuario'];
     }
     else{
-        header('Location: http://juan.thsite.top/crud/proyecto/login.php');
+        header('Location: http://pepe.thsite.top/proyecto/login.php');
         session_abort();
         die();
     }

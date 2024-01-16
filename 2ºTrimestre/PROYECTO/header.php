@@ -1,4 +1,5 @@
 <?php 
+include 'sesion.php';
 $showMessages= false;
 include 'conexion.php';
 
@@ -20,6 +21,8 @@ include 'conexion.php';
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="css/incidencias.css">
+
 </head>
 <body>
 
@@ -27,7 +30,7 @@ include 'conexion.php';
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
-    <a class="navbar-brand me-2" href="https://mdbgo.com/">
+    <a class="navbar-brand me-2" href="https://iesamachado.es/">
       <img
         src="https://www.juntadeandalucia.es/averroes/centros-tic/41009071/helvia/sitio/upload/img/logomachadopeque.jpg"
         height="16"
@@ -64,11 +67,11 @@ include 'conexion.php';
       </ul>
       <!-- Left links -->
 
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center" id="dchanav">
       <a class="btn btn-link px-3 me-2" href="login.php" style="color: white;">Cerrar sesión</a>
 
         
-        <img src="https://cdn-icons-png.flaticon.com/512/260/260507.png" alt="" style="width: 25px; height: auto;">
+        <img src="https://cdn-icons-png.flaticon.com/512/260/260507.png" id='persona' alt="" >
 
         <?php
             echo $_SESSION['usuario'];
@@ -87,4 +90,3 @@ import { Collapse, Ripple, initMDB } from "mdb-ui-kit";
 
 initMDB({ Collapse, Ripple });
 </script>
-    

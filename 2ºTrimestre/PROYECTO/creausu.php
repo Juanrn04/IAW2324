@@ -37,6 +37,16 @@
 </html>
 
 <?php
+   /* include 'sesion.php';
+
+    $usuconectado = $_SESSION['usuario'];
+
+    $compradmin = "SELECT admin FROM usuproyecto WHERE usuario = $usuconectado";
+    $resultado1 = $conn->query($compradmin);
+    if ($resultado1)
+    {
+        $fila = $resultado1->fetch_assoc();
+        if ($fila['admin'] != 1) {*/
         //Conexión a base de datos mediante PDO
 
         if ($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -86,7 +96,17 @@
                     echo "<script> document.getElementById('mensaje').innerHTML='Usuario ya existente'
                     document.getElementById('mensaje').className='error'</script>";
                 }
+            }
             $conn->close();
             }
-        }
+  /*      }
+    }
+    else
+    {
+        echo "<script>
+        alert('Su usuario no tiene permisos de administrador');
+        </script>";
+        
+        
+    }*/
 ?>

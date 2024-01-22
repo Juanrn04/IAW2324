@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN | PROYECTO</title>
+    <title>CREAR USUARIO | PROYECTO</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <div class='caja'>
         <h1>
-            Iniciar Sesión
+            Crear usuario
         </h1>
 
         <div>
             <form action="#" method="post" id="formu">
             <label for="">Usuario</label>
-            <input type="text" name='usuario' placeholder='Ej.:Manolito'> <br>
-            <label for="">Contraseña</label>
-            <input type="password" name='contrasena' placeholder='Ej.:sUp3rM4N0lit0'><br> <br>
-            <label for="">Repita la contraseña</label>
-            <input type="password2" name='contrasena2' placeholder='Ej.:sUp3rM4N0lit0'><br> <br>
-            <button name="submit" type="submit" class="myButton" >Login</button>
+            <input type="text" name='usuario' placeholder='Ej.:Manolito' > <br>
+            <label for="" class='preg'>Contraseña</label>
+            <input type="password" name='contrasena' placeholder='Ej.:sUp3rM4N0lit0'><br> 
+            <label for="" class='preg'>Repita la contraseña</label>
+            <input type="password" name='contrasena2' placeholder='Ej.:sUp3rM4N0lit0'><br>
+            <label for="planta" class="form-label" class='preg'>Planta</label>
+            <select name="planta" id="planta" class="form-control preg" required>
+                <option value="0">Dirección</option>
+                <option value="0">Profesor</option>
+                <option value="1">Administrador</option>
+            </select>
+            <button name="submit" type="submit" class="myButton" >Crear</button>
             </form>
         </div>
         <label for="" id="mensaje" class=''></label>
@@ -54,28 +60,28 @@
         
                 header("Content-type:text/html;charset=utf-8");
 
-                $comprobar = "SELECT usuario FROM usuproyecto";
+                $comprobar = "SELECT usuario FROM usuproyecto WHERE usuario='$usuario'";
                 $result = $conn->query($comprobar);
 
                 
-                if ($result->rowCount() == 0) {
+                if ($result->rowCount() < 1) {
                     // Mira si el usuario ha sido registrado
 
 
                     /*insert*/
 
-                    $insert = "INSERT INTO usuproyecto (usuario) VALUES('$usuario'";
+                    $insert = "INSERT INTO usuproyecto (usuario,contrasena) VALUES('$usuario','$passwd')";
                     $resultado = $conn->query($insert);
 
 
-                    echo "<script> document.getElementById('mensaje').innerHTML='Inicio de sesión correcto';
+                    echo "<script> document.getElementById('mensaje').innerHTML='Usuario creado correctamente';
                     document.getElementById('mensaje').className='acierto'</script>";
 
                     session_start();
-                    sleep(1.5);
+                    sleep(1);
                     $_SESSION['usuario']=$usuario;
-                    header("Location: incidencias.php");
-        
+                    header('Location: incidencias.php');
+
                 } else {
                     echo "<script> document.getElementById('mensaje').innerHTML='Usuario ya existente'
                     document.getElementById('mensaje').className='error'</script>";

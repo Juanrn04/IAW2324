@@ -23,6 +23,8 @@ include 'conexion.php';
 
 <link rel="stylesheet" href="css/incidencias.css">
 
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
 <body>
 
@@ -64,6 +66,9 @@ include 'conexion.php';
         <li class="nav-item">
           <a class="nav-link" href="create.php" style="color: white;">Crear incidencia</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="creausu.php" style="color: white;">Crear usuario</a>
+        </li>
       </ul>
       <!-- Left links -->
 
@@ -90,3 +95,4 @@ import { Collapse, Ripple, initMDB } from "mdb-ui-kit";
 
 initMDB({ Collapse, Ripple });
 </script>
+    

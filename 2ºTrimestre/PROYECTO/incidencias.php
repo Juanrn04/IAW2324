@@ -18,10 +18,13 @@
           ?>
 
   <div class="container">
-    <h1 class="text-center" >Gestión de incidencias (CRUD)</h1>
-    <h4 class="text-center" >Incidencias totales: <?php echo $vistatot->fetch()[0]; ?> </h4>
-    <h4 class="text-center" >Incidencias resueltas: <?php echo $vistares->fetch()[0]; ?> </h4>
-    <h4 class="text-center" >Incidencias pendientes: <?php echo $vistapen->fetch()[0]; ?> </h4>
+    <h1 class="text-center" >Incidencias IES Antonio Machado</h1>
+    <div id="contadores">
+      <h4 class="text-center" >Incidencias totales: <?php echo $vistatot->fetch()[0]; ?> </h4>
+      <h4 class="text-center" >Incidencias resueltas: <?php echo $vistares->fetch()[0]; ?> </h4>
+      <h4 class="text-center" >Incidencias pendientes: <?php echo $vistapen->fetch()[0]; ?> </h4>
+    </div>
+    
       <a href="create.php" class='btn btn-outline-dark mb-2' id="anadir"> <i class="bi bi-person-plus"></i> Añadir incidencia</a>
         <table class="table table-striped table-bordered table-hover">
           <thead class="table-dark">
@@ -75,7 +78,7 @@
               echo " <td class='text-center' > <a href='update.php?editar&incidencias_id={$id}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>";
               echo " <td class='text-center'>  <a href='delete.php?eliminar={$id}' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>";
               echo " </tr> ";
-                  }  
+            }  
 
             include "footer.php";
 

@@ -1,3 +1,16 @@
+<?php
+
+    session_start();
+    session_set_cookie_params(120);
+
+    if($_SESSION['admin']!="1"){
+        echo "<script> alert ('Debe ser admin para acceder a esta página') 
+        window.location='http://pepe.thsite.top/proyecto/incidencias.php'</script>";
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,8 +34,8 @@
             <input type="password" name='contrasena' placeholder='Ej.:sUp3rM4N0lit0'><br> 
             <label for="" class='preg'>Repita la contraseña</label>
             <input type="password" name='contrasena2' placeholder='Ej.:sUp3rM4N0lit0'><br>
-            <label for="planta" class="form-label" class='preg'>Planta</label>
-            <select name="planta" id="planta" class="form-control preg" required>
+            <label for="planta" class="form-label" class='preg'>Rol</label>
+            <select name="admin" id="planta" class="form-control preg" required>
                 <option value="0">Dirección</option>
                 <option value="0">Profesor</option>
                 <option value="1">Administrador</option>
@@ -37,16 +50,6 @@
 </html>
 
 <?php
-   /* include 'sesion.php';
-
-    $usuconectado = $_SESSION['usuario'];
-
-    $compradmin = "SELECT admin FROM usuproyecto WHERE usuario = $usuconectado";
-    $resultado1 = $conn->query($compradmin);
-    if ($resultado1)
-    {
-        $fila = $resultado1->fetch_assoc();
-        if ($fila['admin'] != 1) {*/
         //Conexión a base de datos mediante PDO
 
         if ($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -54,6 +57,8 @@
             $usuario=htmlspecialchars($_POST['usuario']);
             $passwd=base64_encode(htmlspecialchars($_POST['contrasena']));
             $passwd2=base64_encode(htmlspecialchars($_POST['contrasena2']));
+            $admin=(htmlspecialchars($_POST['admin']));
+
             
 
             if($usuario==null OR $passwd==null){
@@ -67,6 +72,8 @@
                 $showMessages = false;
 
                 include "conexion.php";
+
+                //echo $_SESSION['admin'];
         
                 header("Content-type:text/html;charset=utf-8");
 
@@ -80,7 +87,7 @@
 
                     /*insert*/
 
-                    $insert = "INSERT INTO usuproyecto (usuario,contrasena) VALUES('$usuario','$passwd')";
+                    $insert = "INSERT INTO usuproyecto (usuario,contrasena,admin) VALUES('$usuario','$passwd','$admin')";
                     $resultado = $conn->query($insert);
 
 
@@ -90,23 +97,13 @@
                     session_start();
                     sleep(1);
                     $_SESSION['usuario']=$usuario;
-                    header('Location: incidencias.php');
+                    header('Location: login.php');
 
                 } else {
                     echo "<script> document.getElementById('mensaje').innerHTML='Usuario ya existente'
                     document.getElementById('mensaje').className='error'</script>";
                 }
-            }
             $conn->close();
             }
-  /*      }
-    }
-    else
-    {
-        echo "<script>
-        alert('Su usuario no tiene permisos de administrador');
-        </script>";
-        
-        
-    }*/
+        }
 ?>

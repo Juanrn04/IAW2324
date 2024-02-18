@@ -1,10 +1,10 @@
 <?php
     ob_start(); //Conexión a base de datos mediante PDO
     
-    $servername = "sql307.byetcluster.com";
-    $username = "thsi_35748569";
-    $password = "U?daGhYf";
-    $bd="thsi_35748569_bdpruebas";
+    $servername = "sql307.thsite.top";
+    $username = "thsi_35748575";
+    $password = "uS9rA5MT";
+    $dbname = "thsi_35748575_bdprueba";
 
     if (!isset($showMessages)) {
         $showMessages = true;

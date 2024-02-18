@@ -44,7 +44,7 @@
     // Conexion con la base de datos
     header("Content-type:text/html;charset=utf-8");
     include "conexion.php";
-    $enlace = mysqli_connect("sql307.thsite.top","thsi_35748569","U?daGhYf","thsi_35748569_bdpruebas");
+    $enlace = mysqli_connect("sql307.thsite.top","thsi_35748575","uS9rA5MT","thsi_35748575_bdprueba");
 
         if ($_POST['planta']=='')
         {

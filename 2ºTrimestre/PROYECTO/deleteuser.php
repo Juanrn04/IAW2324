@@ -7,7 +7,7 @@
 
     if($_SESSION['admin']!="Administrador"){
         echo "<script> alert ('Debe ser admin para acceder a esta página') 
-        window.location='http://pepe.thsite.top/proyecto/incidencias.php'</script>";
+        window.location='http://juan.thsite.top/proyecto/incidencias.php'</script>";
     } else {
 /*
         echo 
@@ -17,7 +17,7 @@
 
         if (confirmacion == false) {
             // Si el usuario cancela, redirige a la página de incidencias
-            window.location='http://pepe.thsite.top/proyecto/incidencias.php';
+            window.location='http://pepe.juan.top/proyecto/incidencias.php';
         }
         </script>
 

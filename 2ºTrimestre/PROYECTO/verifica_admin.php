@@ -11,10 +11,10 @@
     
     if($_SESSION['admin']!="1"){
         echo "<script> alert ('Debe ser admin para acceder a esta página') 
-        window.location='http://pepe.thsite.top/proyecto/incidencias.php'</script>";
+        window.location='http://juan.thsite.top/proyecto/incidencias.php'</script>";
     }
     else{
-        header('Location: http://pepe.thsite.top/proyecto/creausu.php');
+        header('Location: http://juan.thsite.top/proyecto/creausu.php');
       /*  // Marca la sesión como verificada para evitar bucle de redirección
         $_SESSION['admin_checked'] = true;*/
     }

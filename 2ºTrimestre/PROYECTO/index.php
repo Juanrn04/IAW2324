@@ -44,7 +44,7 @@
                 document.getElementById('mensaje').className='error'</script>";
             } else{
 
-                $showMessages = false;
+                $showMessages = true;
 
                 include "conexion.php";
         

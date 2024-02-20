@@ -10,14 +10,13 @@
         $showMessages = true;
     }
     try {
-    $conn = new PDO("mysql:host=$servername;dbname=$bd", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn = new PDO("mysql:host=$servername;dbname=$bd", $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    if ($showMessages) {
-        echo "Conectado con éxito a $servername con usuario $username y contraseña $password <br><br>" ;
-
-    }
+        if ($showMessages) {
+            echo "Conectado con éxito a $servername con usuario $username y contraseña $password <br><br>" ;
+        }
     
     } catch(PDOException $e) {
 
@@ -26,8 +25,5 @@
         }
     exit();
     }
-
-    
-
     ob_end_flush();
 ?>

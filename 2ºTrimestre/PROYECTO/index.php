@@ -40,16 +40,12 @@
             
 
             if($usuario==null OR $passwd==null){
-                echo "<script> document.getElementById('mensaje').innerHTML='Todos los campos son obligatorios'
-                document.getElementById('mensaje').className='error'</script>";
+                echo "<script> document.getElementById('mensaje').innerHTML='Todos los campos son obligatorios';document.getElementById('mensaje').className='error'</script>";
             } else{
-
                 $showMessages = false;
+                include "conexion.php";      
+                // header("Content-type:text/html;charset=utf-8");
 
-                include "conexion.php";
-        
-                header("Content-type:text/html;charset=utf-8");
-                echo $passwd;
                 $comprobar = "SELECT * FROM usuproyecto where usuario='$usuario' AND contrasena='$passwd'";
                 $result = $conn->query($comprobar);
                 while($row=$result->fetch()){

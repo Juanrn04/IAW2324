@@ -49,7 +49,7 @@
                 include "conexion.php";
         
                 header("Content-type:text/html;charset=utf-8");
-
+                echo $passwd;
                 $comprobar = "SELECT * FROM usuproyecto where usuario='$usuario' AND contrasena='$passwd'";
                 $result = $conn->query($comprobar);
                 while($row=$result->fetch()){

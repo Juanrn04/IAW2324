@@ -52,7 +52,7 @@
         <table class="table table-striped table-bordered table-hover">
           <thead class="table-dark">
             <tr>
-              <th  scope="col">ID</th>
+              <th  scope="col">email</th>
               <th  scope="col">Planta</th>
               <th  scope="col">Aula</th>
               <th  scope="col">Descripción</th>
@@ -65,7 +65,7 @@
           </thead>
             <tbody>
               <tr>
- 
+             
 
  
               
@@ -81,7 +81,8 @@
             $vista_incidencias= $conn->query($query);
 
             while($row = $vista_incidencias->fetch()){
-              $id = $row['id'];                
+              $id = $row['id'];      
+              $email = $row['email'];     
               $planta = $row['planta'];        
               $aula = $row['aula'];         
               $descripcion = $row['descripcion'];        
@@ -96,7 +97,7 @@
                 $resolucion='';
               }
               echo "<tr >";
-              echo " <th scope='row' >{$id}</th>";
+              echo " <th scope='row' >{$email}</th>";
               echo " <td > {$planta}</td>";
               echo " <td > {$aula}</td>";
               echo " <td >{$descripcion} </td>";

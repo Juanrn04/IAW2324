@@ -54,6 +54,8 @@
                 $result = $conn->query($comprobar);
                 while($row=$result->fetch()){
                     $admin=$row['admin'];
+                    $email=$row['email'];
+                    $fecha=$row['fecha'];
                     
                 }
 
@@ -66,6 +68,15 @@
                     session_start();
                     $_SESSION['usuario']=$usuario;
                     $_SESSION['admin']=$admin;
+                    $_SESSION['email']=$email;
+                    $_SESSION['fecha']=$fecha;
+
+                    date_default_timezone_set('Europe/Madrid');
+                    $sesion=date("d-m-Y h:i:sa");
+                    $actusesion = "UPDATE usuproyecto set fecha = '$sesion' WHERE usuario = '$usuario'";
+                    $result = $conn->query($actusesion);
+                    
+
                     header("Refresh:1; url=incidencias.php");
         
                 } else {

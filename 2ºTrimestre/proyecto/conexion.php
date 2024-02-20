@@ -4,7 +4,7 @@
     $servername = "sql207.thsite.top";
     $username = "thsi_36017453";
     $password = "a!qeOZEc";
-    $dbname = "thsi_36017453_prueba";
+    $bd = "thsi_36017453_prueba";
 
     if (!isset($showMessages)) {
         $showMessages = true;

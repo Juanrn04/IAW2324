@@ -5,7 +5,7 @@
         $usuario=$_SESSION['usuario'];
     }
     else{
-        header('Location: http://juanillo.thsite.top/crud/proyecto/index.php');
+        header('Location: http://juanillo.thsite.top/proyecto/index.php');
         session_abort();
         die();
     }
